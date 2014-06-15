@@ -1,0 +1,14 @@
+{
+  "name": "lab",
+  "description": "WebVis lab - Syncs Gist and display EXes (experiments and examples)",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "request": "2.x",
+    "parse-link-header": "0.x",
+    "mongodb": "1.x",
+    "queue-async": "1.x",
+    "lodash": "2.x"
+  }
+}
