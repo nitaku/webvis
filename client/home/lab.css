@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "League Gothic";
+  src: url(LeagueGothic-Regular.otf);
+}
+@font-face {
+  font-family: "Hefty Regular";
+  src: url("Hefty Regular.otf");
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    
+    background: #393d48;
+    color: #dfd7c4;
+    font-family: sans-serif;
+}
+
+#lab {
+    background: #393d48;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#lab_header {
+    font-family: "Hefty Regular";
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 16px;
+    margin-bottom: 22px;
+}
+
+.gist {
+    display: inline-block;
+    vertical-align: top;
+    height: 122px;
+
+    margin: 9px;
+}
+.thumbnail {
+    width: 230px;
+    height: 80px;
+    position: relative;
+    opacity: 0.8;
+    border: 1px solid #dfd7c4;
+    
+    background-position: 0% 0%;
+    transition: ease 2000ms background-position;
+    -webkit-transition: ease 2000ms background-position;
+    -moz-transition: ease 2000ms background-position;
+    -ms-transition: ease 2000ms background-position;
+    -o-transition: ease 2000ms background-position;
+}
+a:focus .thumbnail,
+a:hover .thumbnail {
+    opacity: 1;
+    background-position: 0% 100%;
+    transition-delay: 500ms;
+    -webkit-transition-delay: 500ms;
+    -moz-transition-delay: 500ms;
+    -ms-transition-delay: 500ms;
+    -o-transition-delay: 500ms;
+}
+.avatar {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    border: 1px solid #393d48;
+}
+.description {
+    width: 230px;
+    font-size: 14px;
+    font-family: sans-serif;
+    margin-bottom: 24px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+#lab a {
+    color: inherit;
+}
+#lab a:hover {
+    text-decoration: none;
+}
+
+#main {
+    padding: 32px;
+}
+
+.entry {
+    margin-left: 64px;
+}

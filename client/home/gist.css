@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "League Gothic";
+  src: url(LeagueGothic-Regular.otf);
+}
+@font-face {
+  font-family: "Hefty Regular";
+  src: url("Hefty Regular.otf");
+}
+
+body {
+    overflow-y: scroll;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    
+    background: #393d48;
+    color: #dfd7c4;
+    
+    font-family: sans-serif;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: "League Gothic";
+    font-size: 60px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    margin: 12px;
+    margin-left: 58px;
+}
+h2 {
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    float: right;
+    margin-top: 22px;
+    margin-right: 80px;
+}
+
+section {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+iframe {
+    width: 960px;
+    height: 500px;
+    border: 1px solid #dfd7c4;
+    background: white;
+}
+
+article {
+    margin-top: 26px;
+}
+
+h2 {
+    position: relative;
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: -40px;
+    top: 3px;
+}
+
+nav {
+    float: right;
+    margin: 4px;
+    font-size: 11px;
+}
+
+article img {
+    margin: 12px;
+}
