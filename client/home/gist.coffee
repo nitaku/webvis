@@ -28,7 +28,11 @@ d3.json "api/gists/#{this_gist_id}", (gist) ->
         .html "Open in <a href='http://bl.ocks.org/#{gist.id}'>bl.ocks.org</a> - <a href='http://gist.github.com/#{gist.id}'>Gist</a> - <a href='#{gist.id}/index.html'>full page</a>"
         
     # convert bl.ocks.org links to webvis
-    readme_markdown = gist.files['README.md'].content.replace(new RegExp("\(http:\/\/bl\.ocks\.org\/("+USERS.join('|')+")/(.*)\)", 'g'), '$3')
+    readme_markdown = gist.files['README.md'].content
+    for user in USERS
+        readme_markdown = readme_markdown.replace(new RegExp("http:\/\/bl\.ocks\.org\/"+user+"/([a-f0-9]+)", 'g'), '$1')
+        
+    console.log readme_markdown
     
     container.append('article')
         .html converter.makeHtml(readme_markdown)
