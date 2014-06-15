@@ -61,6 +61,7 @@ MongoClient.connect 'mongodb://127.0.0.1:27017/lab', (error, db) ->
                 <head>
                     <meta charset="utf-8">
                     <link rel="stylesheet" href="home/lab.css">
+                    <link rel="stylesheet" href="home/headers.css">
                     <script src="home/lib/showdown.js"></script>
                     <script src="http://d3js.org/d3.v3.min.js"></script>
                 </head>

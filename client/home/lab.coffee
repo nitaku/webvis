@@ -5,7 +5,7 @@ lab = body.append('div')
         id: 'lab'
         
 lab.append('div')
-    .text('Lab')
+    .html('<img src="home/icons/lab_icon.svg"/>Lab')
     .attr
         id: 'lab_header'
         
