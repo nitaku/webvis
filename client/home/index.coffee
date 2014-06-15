@@ -14,7 +14,7 @@ lab.append('a')
     .attr
         href: 'lab'
   .append('div')
-    .html('<img src="home/icons/lab_icon.svg"/>Lab')
+    .html('<img src="home/icons/lab_icon.svg"/>Lab <i class="fa fa-angle-double-right fa-2x"></i>')
     .attr
         id: 'lab_header'
         
