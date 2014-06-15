@@ -49,5 +49,5 @@ d3.json '/webvis/lab/api/gists', (gists) ->
     enter_gists.append('div')
         .attr
             class: 'description'
-        .text((g) -> g.description)
+        .text((g) -> (if g.truncated then 'BROKEN - ' else '') + g.description)
         

@@ -44,7 +44,7 @@
     return enter_gists.append('div').attr({
       "class": 'description'
     }).text(function(g) {
-      return g.description;
+      return (g.truncated ? 'BROKEN - ' : '') + g.description;
     });
   });
 

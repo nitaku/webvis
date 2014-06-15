@@ -1,3 +1,6 @@
+# FIXME this should be read from a central database
+USERS = ['nitaku','kleem','fabiovalse','andreaderrico2']
+
 converter = new Showdown.converter()
 
 time_format = d3.time.format('%B %d, %Y')
@@ -24,6 +27,9 @@ d3.json "api/gists/#{this_gist_id}", (gist) ->
     container.append('nav')
         .html "Open in <a href='http://bl.ocks.org/#{gist.id}'>bl.ocks.org</a> - <a href='http://gist.github.com/#{gist.id}'>Gist</a> - <a href='#{gist.id}/index.html'>full page</a>"
         
+    # convert bl.ocks.org links to webvis
+    readme_markdown = gist.files['README.md'].content.replace(new RegExp("\(http:\/\/bl\.ocks\.org\/("+USERS.join('|')+")/(.*)\)", 'g'), '$3')
+    
     container.append('article')
-        .html converter.makeHtml(gist.files['README.md'].content)
+        .html converter.makeHtml(readme_markdown)
         
