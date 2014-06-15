@@ -14,7 +14,7 @@ lab.append('a')
     .attr
         href: 'lab'
   .append('div')
-    .text('Lab')
+    .html('<img src="home/icons/lab_icon.svg"/>Lab')
     .attr
         id: 'lab_header'
         

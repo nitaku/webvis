@@ -22,15 +22,6 @@ html, body {
     margin-left: auto;
     margin-right: auto;
 }
-#lab_header {
-    font-family: "Hefty Regular";
-    font-size: 22px;
-    letter-spacing: 2px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 16px;
-    margin-bottom: 22px;
-}
 
 .gist {
     display: inline-block;

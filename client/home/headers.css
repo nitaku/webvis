@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "League Gothic";
+  src: url(LeagueGothic-Regular.otf);
+}
+@font-face {
+  font-family: "Hefty Regular";
+  src: url("Hefty Regular.otf");
+}
+
+#lab_header {
+    font-family: "Hefty Regular";
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 16px;
+    margin-bottom: 22px;
+}
+#lab_header > img {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+    right: 3px;
+}

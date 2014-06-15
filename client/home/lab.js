@@ -7,7 +7,7 @@
     id: 'lab'
   });
 
-  lab.append('div').text('Lab').attr({
+  lab.append('div').html('<img src="home/icons/lab_icon.svg"/>Lab').attr({
     id: 'lab_header'
   });
 
