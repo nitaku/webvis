@@ -60,6 +60,9 @@ MongoClient.connect 'mongodb://127.0.0.1:27017/lab', (error, db) ->
             <html>
                 <head>
                     <meta charset="utf-8">
+                    
+                    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+                    
                     <link rel="stylesheet" href="home/lab.css">
                     <link rel="stylesheet" href="home/headers.css">
                     <script src="home/lib/showdown.js"></script>
@@ -77,6 +80,9 @@ MongoClient.connect 'mongodb://127.0.0.1:27017/lab', (error, db) ->
             <html>
                 <head>
                     <meta charset="utf-8">
+                    
+                    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+                    
                     <link rel="stylesheet" href="../home/gist.css">
                     <script>
                         var this_gist_id = '#{req.params.id}';
