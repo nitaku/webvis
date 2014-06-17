@@ -33,7 +33,7 @@
       "class": 'comments_box'
     });
     a = comments_box.append('a').attr({
-      href: "https://gist.github.com/" + gist.id + "#footer"
+      href: "https://gist.github.com/" + gist.id + "#js-new-comment-form-actions"
     });
     a.append('div').attr({
       "class": 'add_link'

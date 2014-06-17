@@ -42,7 +42,7 @@ d3.json "api/gists/#{this_gist_id}", (gist) ->
     
     a = comments_box.append('a')
         .attr
-            href: "https://gist.github.com/#{gist.id}#footer"
+            href: "https://gist.github.com/#{gist.id}#js-new-comment-form-actions"
     
     a.append('div')
         .attr
