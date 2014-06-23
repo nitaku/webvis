@@ -44,7 +44,7 @@
       }), function(c) {
         return c.id;
       }).enter().insert('div', '.comment:first-child').attr('class', 'comment').html(function(c) {
-        return "<img src='" + c.user.avatar_url + "'/>" + c.body;
+        return "<img src='" + c.user.avatar_url + "'/>" + (converter.makeHtml(c.body));
       });
     });
   });

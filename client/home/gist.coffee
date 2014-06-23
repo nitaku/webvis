@@ -54,5 +54,5 @@ d3.json "api/gists/#{this_gist_id}", (gist) ->
             .data(data.filter((c) -> c.user.login isnt 'nnwakelam'), (c) -> c.id) # workaround for spam comments
           .enter().insert('div', '.comment:first-child')
             .attr('class', 'comment')
-            .html((c) -> "<img src='#{c.user.avatar_url}'/>#{c.body}")
+            .html((c) -> "<img src='#{c.user.avatar_url}'/>#{converter.makeHtml(c.body)}")
             
