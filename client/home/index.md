@@ -1,5 +1,8 @@
 # WebVis - Data visualization for the Web
 
+[Link sullo stato dell'arte](http://www.visualisingdata.com/index.php/2013/09/essential-resources-programming-languages-toolkits-and-libraries/)
+[Link sullo stato dell'arte 2](http://www.egrappler.com/javascript-chart-and-graph-libraries-for-developers/)
+
 |[LREC2014 - Conference mood map|Jun 2014|home/covers/moodmap.png|A visualization of bla bla]|
 |[Storytelling - Viareggio train disaster|May 2014|home/covers/viareggio.png|A visualization of bla bla]|
 |[OpeNER - GeoDataViewer|Mar 2014|home/covers/geodataviewer.png|bla bla]|
