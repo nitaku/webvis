@@ -6,6 +6,10 @@
   font-family: "Hefty Regular";
   src: url("Hefty Regular.otf");
 }
+@font-face {
+  font-family: "Inconsolata";
+  src: url("Inconsolata.otf");
+}
 
 body {
     overflow-y: scroll;
@@ -127,3 +131,12 @@ article img {
     border: 0;
     outline: 0;
 }*/
+pre {
+    background: #333;
+    padding: 6px;
+    overflow-x: auto;
+}
+pre code {
+    font-family: "Inconsolata";
+    font-size: 13px;
+}
