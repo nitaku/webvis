@@ -1,7 +1,11 @@
-converter = new Showdown.converter({extensions: ['webvis']})
+converter = new Showdown.converter()
 
 body = d3.select('body')
 
+# intro = body.append('div')
+    # .attr
+        # id: 'intro'
+        
 main = body.append('div')
     .attr
         id: 'main'
@@ -18,8 +22,35 @@ lab.append('a')
     .attr
         id: 'lab_header'
         
-d3.text 'home/index.md', (md) ->
-    main.html converter.makeHtml(md)
+# d3.text 'home/intro.md', (md) ->
+    # intro.html converter.makeHtml(md)
+    
+d3.json 'home/entries.json', (entries) ->
+    enter_entries = main.selectAll('.entry')
+        .data(entries)
+      .enter().append('div')
+        .attr
+            class: 'entry'
+        
+    header = enter_entries.append('div')
+        .attr
+            class: 'header'
+    
+    header.append('h2')
+        .text (entry) -> entry.title
+        
+    header.append('h3')
+        .text (entry) -> entry.date
+        
+    enter_entries.append('div')
+        .style('background-image', (entry) -> "url(#{entry.cover})")
+        .attr
+            class: 'cover'
+            
+    enter_entries.append('div')
+        .html((entry) -> converter.makeHtml(entry.caption))
+        .attr
+            class: 'caption'
     
 d3.json '/webvis/lab/api/gists', (gists) ->
     enter_gists = lab.selectAll('.gist')

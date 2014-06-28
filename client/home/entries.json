@@ -1,0 +1,61 @@
+[{
+    "title": "LREC2014 Conference Mood Map",
+    "date": "Jun 2014",
+    "cover": "home/covers/moodmap.png",
+    "caption": "A visualization of bla bla."
+},{
+    "title": "Storytelling: Viareggio Train Derailment",
+    "date": "May 2014",
+    "cover": "home/covers/viareggio.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "OpeNER GeoDataViewer",
+    "date": "Mar 2014",
+    "cover": "home/covers/geodataviewer.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "Wordnet Atlas II",
+    "date": "Feb 2014",
+    "cover": "home/covers/wnatlas2.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "Map of Italian Languages",
+    "date": "Feb 2014",
+    "cover": "home/covers/italang.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "OpeNER: Tourpedia",
+    "date": "Gen 2014",
+    "cover": "home/covers/tourpedia.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "ASIA",
+    "date": "Dec 2013",
+    "cover": "home/covers/asia.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "The Atlas of Unicode",
+    "date": "Oct 2013",
+    "cover": "home/covers/unicode.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "CAPER Knowledge Base Browser",
+    "date": "Sep 2013",
+    "cover": "home/covers/kbbe.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "Wordnet Atlas",
+    "date": "Jan 2012",
+    "cover": "home/covers/wnatlas.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "GeoMemories",
+    "date": "Nov 2011",
+    "cover": "home/covers/geomemories.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+},{
+    "title": "KYOTO: KAF inspector",
+    "date": "Oct 2010",
+    "cover": "home/covers/kaf_inspector.png",
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+}]

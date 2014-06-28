@@ -1,9 +1,7 @@
 (function() {
   var body, converter, lab, main;
 
-  converter = new Showdown.converter({
-    extensions: ['webvis']
-  });
+  converter = new Showdown.converter();
 
   body = d3.select('body');
 
@@ -21,8 +19,30 @@
     id: 'lab_header'
   });
 
-  d3.text('home/index.md', function(md) {
-    return main.html(converter.makeHtml(md));
+  d3.json('home/entries.json', function(entries) {
+    var enter_entries, header;
+    enter_entries = main.selectAll('.entry').data(entries).enter().append('div').attr({
+      "class": 'entry'
+    });
+    header = enter_entries.append('div').attr({
+      "class": 'header'
+    });
+    header.append('h2').text(function(entry) {
+      return entry.title;
+    });
+    header.append('h3').text(function(entry) {
+      return entry.date;
+    });
+    enter_entries.append('div').style('background-image', function(entry) {
+      return "url(" + entry.cover + ")";
+    }).attr({
+      "class": 'cover'
+    });
+    return enter_entries.append('div').html(function(entry) {
+      return converter.makeHtml(entry.caption);
+    }).attr({
+      "class": 'caption'
+    });
   });
 
   d3.json('/webvis/lab/api/gists', function(gists) {
