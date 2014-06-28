@@ -122,16 +122,17 @@ a:hover {
     border-top-right-radius: 22px;
     border-bottom-left-radius: 22px;
 }
-
+.entry .header {
+    height: 30px;
+}
 .entry h2 {
     font-family: "League Gothic";
-    font-size: 28px;
+    font-size: 48px;
     font-weight: normal;
     margin: 0;
     position: relative;
-    left: 260px;
-    -webkit-transform: scale(1.8) translate(0,-10px);
-    transform: scale(1.8) translate(0,-10px);
+    left: 14px;
+    top: -31px;
 }
 .entry h3 {
     margin: 0;
@@ -139,8 +140,9 @@ a:hover {
     font-size: 12px;
     font-weight: normal;
     position: relative;
-    top: -18px;
-    right: 4px;
+    top: -46px;
+    right: 8px;
+    text-align: right;
 }
 .entry .caption {
     padding: 6px;

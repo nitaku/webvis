@@ -2,11 +2,11 @@
     var webvis = function(converter) {
         return [
             // Entries
-            // |[Title|date|cover.png|caption]| -> <div class='entry'><h2>Title</h2><h3>date</h3><div class="cover" style="background-image: url(cover.png)"></div><div class='caption'>caption</div></div>
+            // |[Title|date|cover.png|caption]| -> <div class='entry'><div class='header'><h2>Title</h2><h3>date</h3></div><div class="cover" style="background-image: url(cover.png)"></div><div class='caption'>caption</div></div>
             { 
                 type: 'lang',
                 filter: function(text) {
-                    return text.replace(/\|\[(.*)\|(.*)\|(.*)\|(.*)\]\|/g, '<div class="entry"><h2>$1</h2><h3>$2</h3><div class="cover" style="background-image: url($3)"></div><div class="caption">$4</div></div>');
+                    return text.replace(/\|\[(.*)\|(.*)\|(.*)\|(.*)\]\|/g, '<div class="entry"><div class="header"><h2>$1</h2><h3>$2</h3></div><div class="cover" style="background-image: url($3)"></div><div class="caption">$4</div></div>');
                 }
             }
         ];
