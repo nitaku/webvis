@@ -20,28 +20,29 @@
   });
 
   d3.json('home/entries.json', function(entries) {
-    var enter_entries, header;
-    enter_entries = main.selectAll('.entry').data(entries).enter().append('div').attr({
-      "class": 'entry'
-    });
-    header = enter_entries.append('div').attr({
-      "class": 'header'
-    });
-    header.append('h2').text(function(entry) {
-      return entry.title;
-    });
-    header.append('h3').text(function(entry) {
-      return entry.date;
-    });
-    enter_entries.append('div').style('background-image', function(entry) {
-      return "url(" + entry.cover + ")";
-    }).attr({
-      "class": 'cover'
-    });
-    return enter_entries.append('div').html(function(entry) {
-      return converter.makeHtml(entry.caption);
-    }).attr({
-      "class": 'caption'
+    return entries.forEach(function(entry) {
+      var container, entry_r, header;
+      entry_r = main.append('div').attr({
+        "class": 'entry'
+      });
+      if (entry.href != null) {
+        container = entry_r.append('a').attr({
+          href: entry.href
+        });
+      } else {
+        container = entry_r;
+      }
+      header = container.append('div').attr({
+        "class": 'header'
+      });
+      header.append('h2').text(entry.title);
+      header.append('h3').text(entry.date);
+      container.append('div').style('background-image', "url(" + entry.cover + ")").attr({
+        "class": 'cover'
+      });
+      return entry_r.append('div').html(converter.makeHtml(entry.caption)).attr({
+        "class": 'caption'
+      });
     });
   });
 

@@ -2,12 +2,14 @@
     "title": "LREC2014 Conference Mood Map",
     "date": "Jun 2014",
     "cover": "home/covers/moodmap.png",
-    "caption": "A visualization of bla bla."
+    "caption": "A visualization of bla bla.",
+    "href": "http://tour-pedia.org/moodmap/"
 },{
     "title": "Storytelling: Viareggio Train Derailment",
     "date": "May 2014",
     "cover": "home/covers/viareggio.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
+    "href": "http://static.repubblica.it/iltirreno/viareggio-la-strage-che-viene-da-lontano/"
 },{
     "title": "OpeNER GeoDataViewer",
     "date": "Mar 2014",
@@ -37,7 +39,8 @@
     "title": "The Atlas of Unicode",
     "date": "Oct 2013",
     "cover": "home/covers/unicode.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
+    "href": "http://wafi.iit.cnr.it/webvis/unicode/"
 },{
     "title": "CAPER Knowledge Base Browser",
     "date": "Sep 2013",
@@ -52,9 +55,10 @@
     "title": "GeoMemories",
     "date": "Nov 2011",
     "cover": "home/covers/geomemories.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
+    "href": "http://geomemories.org"
 },{
-    "title": "KYOTO: KAF inspector",
+    "title": "KYOTO: KAF Inspector",
     "date": "Oct 2010",
     "cover": "home/covers/kaf_inspector.png",
     "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."

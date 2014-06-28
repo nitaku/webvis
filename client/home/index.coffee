@@ -26,31 +26,37 @@ lab.append('a')
     # intro.html converter.makeHtml(md)
     
 d3.json 'home/entries.json', (entries) ->
-    enter_entries = main.selectAll('.entry')
-        .data(entries)
-      .enter().append('div')
-        .attr
-            class: 'entry'
-        
-    header = enter_entries.append('div')
-        .attr
-            class: 'header'
-    
-    header.append('h2')
-        .text (entry) -> entry.title
-        
-    header.append('h3')
-        .text (entry) -> entry.date
-        
-    enter_entries.append('div')
-        .style('background-image', (entry) -> "url(#{entry.cover})")
-        .attr
-            class: 'cover'
+    entries.forEach (entry) ->
+        entry_r = main.append('div')
+            .attr
+                class: 'entry'
+                
+        if entry.href?
+            container = entry_r.append('a')
+                .attr
+                    href: entry.href
+        else
+            container = entry_r
             
-    enter_entries.append('div')
-        .html((entry) -> converter.makeHtml(entry.caption))
-        .attr
-            class: 'caption'
+        header = container.append('div')
+            .attr
+                class: 'header'
+            
+        header.append('h2')
+            .text(entry.title)
+            
+        header.append('h3')
+            .text entry.date
+            
+        container.append('div')
+            .style('background-image', "url(#{entry.cover})")
+            .attr
+                class: 'cover'
+                
+        entry_r.append('div')
+            .html(converter.makeHtml(entry.caption))
+            .attr
+                class: 'caption'
     
 d3.json '/webvis/lab/api/gists', (gists) ->
     enter_gists = lab.selectAll('.gist')
