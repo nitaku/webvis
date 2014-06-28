@@ -2,13 +2,13 @@ converter = new Showdown.converter({extensions: ['webvis']})
 
 body = d3.select('body')
 
-lab = body.append('div')
-    .attr
-        id: 'lab'
-        
 main = body.append('div')
     .attr
         id: 'main'
+        
+lab = body.append('div')
+    .attr
+        id: 'lab'
         
 lab.append('a')
     .attr
@@ -31,7 +31,7 @@ d3.json '/webvis/lab/api/gists', (gists) ->
         .attr
             class: 'gist'
         .style('opacity', (g) -> if g.truncated then 0.1 else undefined) # blur truncated gists
-            
+        
     enter_thumbnails = enter_gists.append('div')
         .attr
             class: 'thumbnail'
@@ -40,7 +40,7 @@ d3.json '/webvis/lab/api/gists', (gists) ->
                 return "url(#{g.files['thumbnail.png'].raw_url})"
             else if g.files['thumbnail.png.base64']?
                 return "url(data:image/png;base64,#{g.files['thumbnail.png.base64'].content})"
-    
+            
     enter_thumbnails.append('img')
         .attr
             class: 'avatar'

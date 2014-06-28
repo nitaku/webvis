@@ -7,12 +7,12 @@
 
   body = d3.select('body');
 
-  lab = body.append('div').attr({
-    id: 'lab'
-  });
-
   main = body.append('div').attr({
     id: 'main'
+  });
+
+  lab = body.append('div').attr({
+    id: 'lab'
   });
 
   lab.append('a').attr({

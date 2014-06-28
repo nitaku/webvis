@@ -16,11 +16,26 @@ html, body {
     font-family: sans-serif;
 }
 
+body {
+    overflow-y: scroll;
+    
+    /* enable flexible box layout */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    
+    -ms-flex-flow: row;
+    -webkit-flex-flow: row;
+    flex-flow: row;
+}
+
 #lab {
     background: #393d48;
     
     width: 270px;
-    float: right;
+    min-height: 100%;
 }
 
 .gist {
@@ -84,10 +99,51 @@ a:hover {
     text-decoration: none;
 }
 
+/* home page */
 #main {
-    padding: 32px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.entry .cover {
+    width: 620px;
+    height: 220px;
+    opacity: 0.8;
+}
+.entry:hover .cover {
+    opacity: 1;
 }
 
 .entry {
-    margin-left: 64px;
+    width: 620px;
+    background: #393d48;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 5em;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+}
+
+.entry h2 {
+    font-family: "League Gothic";
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0;
+    position: relative;
+    left: 260px;
+    -webkit-transform: scale(1.8) translate(0,-10px);
+    transform: scale(1.8) translate(0,-10px);
+}
+.entry h3 {
+    margin: 0;
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    position: relative;
+    top: -18px;
+    right: 4px;
+}
+.entry .caption {
+    padding: 6px;
+    margin-left: 11px;
+    margin-top: 4px;
 }
