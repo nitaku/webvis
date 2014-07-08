@@ -1,4 +1,10 @@
 [{
+    "title": "OpeNER World Cup Mood Map",
+    "date": "Jun 2014",
+    "cover": "home/covers/moodmap2.png",
+    "caption": "A visualization of bla bla.",
+    "href": "http://wafi.iit.cnr.it/openervm/hackathon/demo/"
+},{
     "title": "LREC2014 Conference Mood Map",
     "date": "Jun 2014",
     "cover": "home/covers/moodmap.png",
@@ -11,27 +17,31 @@
     "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
     "href": "http://static.repubblica.it/iltirreno/viareggio-la-strage-che-viene-da-lontano/"
 },{
-    "title": "OpeNER GeoDataViewer",
+    "title": "OpeNER: GeoDataViewer",
     "date": "Mar 2014",
     "cover": "home/covers/geodataviewer.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
+    "href": "http://wafi.iit.cnr.it/openervm/geo_data_viewer/"
 },{
-    "title": "Wordnet Atlas II",
+    "title": "WordNet Atlas II",
     "date": "Feb 2014",
     "cover": "home/covers/wnatlas2.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
+    "href": "http://wafi.iit.cnr.it/webvis/wordnetatlas/"
 },{
-    "title": "Map of Italian Languages",
+    "title": "ItaLang: A Map of Italian Languages",
     "date": "Feb 2014",
     "cover": "home/covers/italang.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
+    "href": "http://wafi.iit.cnr.it/webvis/italang/"
 },{
-    "title": "OpeNER: Tourpedia",
+    "title": "OpeNER: TourPedia",
     "date": "Gen 2014",
     "cover": "home/covers/tourpedia.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
+    "href": "http://tour-pedia.org/gui/demo/"
 },{
-    "title": "ASIA",
+    "title": "ASIA: Entity Network",
     "date": "Dec 2013",
     "cover": "home/covers/asia.png",
     "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
@@ -39,7 +49,7 @@
     "title": "The Atlas of Unicode",
     "date": "Oct 2013",
     "cover": "home/covers/unicode.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
+    "caption": "A map of the more than 110,000 characters covered by [the Unicode standard](http://en.wikipedia.org/wiki/Unicode) (v6.2).",
     "href": "http://wafi.iit.cnr.it/webvis/unicode/"
 },{
     "title": "CAPER Knowledge Base Browser",
@@ -47,7 +57,7 @@
     "cover": "home/covers/kbbe.png",
     "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
 },{
-    "title": "Wordnet Atlas",
+    "title": "WordNet Atlas",
     "date": "Jan 2012",
     "cover": "home/covers/wnatlas.png",
     "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
@@ -60,6 +70,6 @@
 },{
     "title": "KYOTO: KAF Inspector",
     "date": "Oct 2010",
-    "cover": "home/covers/kaf_inspector.png",
+    "cover": "home/covers/kafinspector.png",
     "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
 }]
