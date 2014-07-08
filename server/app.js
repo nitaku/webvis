@@ -56,10 +56,18 @@
       });
     });
     app.get('/', function(req, res) {
-      return res.send("<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        \n        <link href=\"//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n        \n        <link rel=\"stylesheet\" href=\"home/lab.css\">\n        <link rel=\"stylesheet\" href=\"home/headers.css\">\n        <script src=\"home/lib/showdown.js\"></script>\n        <script src=\"http://d3js.org/d3.v3.min.js\"></script>\n    </head>\n    <body>\n        <script src=\"home/lab.js\"></script>\n    </body>\n</html>");
+      return res.send("<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Lab - WAFI WebVis</title>\n        \n        <link href=\"//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n        \n        <link rel=\"stylesheet\" href=\"home/lab.css\">\n        <link rel=\"stylesheet\" href=\"home/headers.css\">\n        <script src=\"home/lib/showdown.js\"></script>\n        <script src=\"http://d3js.org/d3.v3.min.js\"></script>\n    </head>\n    <body>\n        <script src=\"home/lab.js\"></script>\n    </body>\n</html>");
     });
     app.get('//:id', function(req, res) {
-      return res.send("<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        \n        <link href=\"//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n        \n        <link rel=\"stylesheet\" href=\"../home/gist.css\">\n        <script>\n            var this_gist_id = '" + req.params.id + "';\n        </script>\n        <script src=\"../home/lib/showdown.js\"></script>\n        <script src=\"http://d3js.org/d3.v3.min.js\"></script>\n    </head>\n    <body>\n        <script src=\"../home/gist.js\"></script>\n    </body>\n</html>");
+      return db.collection('gists').findOne({
+        id: req.params.id
+      }, {
+        description: 1
+      }, function(error, gist) {
+        if (error) throw error;
+        unmongoify(gist);
+        return res.send("<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        <title>" + gist.description + " - Lab - WAFI WebVis</title>\n        \n        <link href=\"//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n        \n        <link rel=\"stylesheet\" href=\"../home/gist.css\">\n        <script>\n            var this_gist_id = '" + req.params.id + "';\n        </script>\n        <script src=\"../home/lib/showdown.js\"></script>\n        <script src=\"http://d3js.org/d3.v3.min.js\"></script>\n    </head>\n    <body>\n        <script src=\"../home/gist.js\"></script>\n    </body>\n</html>");
+      });
     });
     app.get('//:id/:file', function(req, res) {
       return db.collection('gists').findOne({

@@ -60,6 +60,7 @@ MongoClient.connect 'mongodb://127.0.0.1:27017/lab', (error, db) ->
             <html>
                 <head>
                     <meta charset="utf-8">
+                    <title>Lab - WAFI WebVis</title>
                     
                     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
                     
@@ -75,26 +76,32 @@ MongoClient.connect 'mongodb://127.0.0.1:27017/lab', (error, db) ->
         """
         
     app.get '//:id', (req, res) ->
-        res.send """
-            <!DOCTYPE html>
-            <html>
-                <head>
-                    <meta charset="utf-8">
-                    
-                    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-                    
-                    <link rel="stylesheet" href="../home/gist.css">
-                    <script>
-                        var this_gist_id = '#{req.params.id}';
-                    </script>
-                    <script src="../home/lib/showdown.js"></script>
-                    <script src="http://d3js.org/d3.v3.min.js"></script>
-                </head>
-                <body>
-                    <script src="../home/gist.js"></script>
-                </body>
-            </html>
-        """
+        db.collection('gists').findOne {id: req.params.id}, {description: 1}, (error, gist) ->
+            throw error if error
+            
+            unmongoify gist
+            
+            res.send """
+                <!DOCTYPE html>
+                <html>
+                    <head>
+                        <meta charset="utf-8">
+                        <title>#{gist.description} - Lab - WAFI WebVis</title>
+                        
+                        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+                        
+                        <link rel="stylesheet" href="../home/gist.css">
+                        <script>
+                            var this_gist_id = '#{req.params.id}';
+                        </script>
+                        <script src="../home/lib/showdown.js"></script>
+                        <script src="http://d3js.org/d3.v3.min.js"></script>
+                    </head>
+                    <body>
+                        <script src="../home/gist.js"></script>
+                    </body>
+                </html>
+            """
         
     app.get '//:id/:file', (req, res) ->
         db.collection('gists').findOne {id: req.params.id}, {}, (error, gist) ->
