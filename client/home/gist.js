@@ -14,7 +14,7 @@
     body.append('h2').html(("<img class='avatar' src='" + gist.owner.avatar_url + "'/>") + time_format(new Date(gist.created_at)) + '<br/>by ' + gist.owner.login);
     body.append('h1').text(gist.description);
     container = body.append('section');
-    container.append('nav').html("Open in <a href='http://bl.ocks.org/" + gist.id + "'>bl.ocks.org</a> - <a href='http://gist.github.com/" + gist.id + "'>Gist</a> - <a href='" + gist.id + "/index.html'>full page</a>");
+    container.append('nav').html("Open in <a href='http://bl.ocks.org/" + gist.owner.login + "/" + gist.id + "'>bl.ocks.org</a> - <a href='http://gist.github.com/" + gist.owner.login + "/" + gist.id + "'>Gist</a> - <a href='" + gist.id + "/index.html'>full page</a>");
     if (gist.files['index.html'] != null) {
       container.append('iframe').attr({
         src: "" + gist.id + "/index.html",

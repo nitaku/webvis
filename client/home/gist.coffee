@@ -17,7 +17,7 @@ d3.json "api/gists/#{this_gist_id}", (gist) ->
     container = body.append('section')
     
     container.append('nav')
-        .html "Open in <a href='http://bl.ocks.org/#{gist.id}'>bl.ocks.org</a> - <a href='http://gist.github.com/#{gist.id}'>Gist</a> - <a href='#{gist.id}/index.html'>full page</a>"
+        .html "Open in <a href='http://bl.ocks.org/#{gist.owner.login}/#{gist.id}'>bl.ocks.org</a> - <a href='http://gist.github.com/#{gist.owner.login}/#{gist.id}'>Gist</a> - <a href='#{gist.id}/index.html'>full page</a>"
     
     if gist.files['index.html']?
         container.append('iframe')
