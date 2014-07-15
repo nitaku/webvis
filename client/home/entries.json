@@ -60,12 +60,12 @@
     "title": "WordNet Atlas",
     "date": "Jan 2012",
     "cover": "home/covers/wnatlas.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+    "caption": "A visualization of WordNet. Described in a [GWC paper](home/public_papers/wnatlas_gwc.pdf) and in an [LREC one](home/public_papers/wnatlas_lrec.pdf)."
 },{
-    "title": "GeoMemories",
+    "title": "GeoMemories: Visualization Interfaces",
     "date": "Nov 2011",
     "cover": "home/covers/geomemories.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment).",
+    "caption": "[...] The interfaces are described in [this paper](home/public_papers/geomemories_ijgi.pdf).",
     "href": "http://geomemories.org"
 },{
     "title": "KYOTO: KAF Inspector",
