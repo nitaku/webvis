@@ -71,5 +71,5 @@
     "title": "KYOTO: KAF Inspector",
     "date": "Oct 2010",
     "cover": "home/covers/kafinspector.png",
-    "caption": "A visualization of bla bla. [The Viareggio derailment](http://en.wikipedia.org/wiki/Viareggio_train_derailment)."
+    "caption": "A visual environment in which experts of computational linguistics can inspect and debug documents annotated with the Knowledge Annotation Format (KAF - [Bosma et al. 2009](http://www.researchgate.net/publication/228922488_KAF_a_generic_semantic_annotation_format/file/9fcfd50a355ff71027.pdf)), a text annotation format developed for [the KYOTO european project](http://kyoto-project.eu/xmlgroup.iit.cnr.it/kyoto/index.html).\n\nDifferent annotation layers can be navigated akin to web pages thanks to the use of [Hash URIs](http://www.w3.org/blog/2011/05/hash-uris/), while more complex queries to an entire document base can be performed in SQL."
 }]

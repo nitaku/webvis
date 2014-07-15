@@ -145,7 +145,7 @@ a:hover {
     font-weight: normal;
     margin: 0;
     position: relative;
-    left: 14px;
+    left: 24px;
     top: -31px;
 }
 .entry > a {
@@ -165,5 +165,12 @@ a:hover {
     text-align: right;
 }
 .entry .caption {
-    margin-left: 14px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 18px;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
