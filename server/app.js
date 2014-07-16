@@ -22,7 +22,8 @@
           'files.thumbnail\uff0epng.raw_url': 1,
           'files.thumbnail\uff0epng\uff0ebase64': 1,
           owner: 1,
-          truncated: 1
+          truncated: 1,
+          comments: 1
         },
         sort: [['created_at', -1]]
       };

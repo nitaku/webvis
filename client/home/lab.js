@@ -41,6 +41,13 @@
         return g.owner.avatar_url;
       }
     });
+    enter_thumbnails.filter(function(gist) {
+      return gist.comments > 0;
+    }).append('div').attr({
+      "class": 'comments'
+    }).html(function(gist) {
+      return "<span class='fa-stack fa-lg'><i class='fa fa-comment fa-flip-horizontal fa-stack-1x' style='color: white;'></i><i class='fa fa-comment-o fa-flip-horizontal fa-stack-1x' style='font-weight: bold;color: #393d48;'></i></span><span class='count'>" + gist.comments + "</span>";
+    });
     return enter_gists.append('div').attr({
       "class": 'description'
     }).text(function(g) {

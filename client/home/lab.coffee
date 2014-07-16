@@ -35,6 +35,12 @@ d3.json '/webvis/lab/api/gists', (gists) ->
             class: 'avatar'
             src: (g) -> g.owner.avatar_url
             
+    enter_thumbnails.filter((gist) -> gist.comments > 0)
+      .append('div')
+        .attr
+            class: 'comments'
+        .html((gist) -> "<span class='fa-stack fa-lg'><i class='fa fa-comment fa-flip-horizontal fa-stack-1x' style='color: white;'></i><i class='fa fa-comment-o fa-flip-horizontal fa-stack-1x' style='font-weight: bold;color: #393d48;'></i></span><span class='count'>#{gist.comments}</span>")
+        
     enter_gists.append('div')
         .attr
             class: 'description'
