@@ -15,7 +15,7 @@ MongoClient.connect 'mongodb://127.0.0.1:27017/lab', (error, db) ->
     
     users_q = queue(10)
     
-    ['nitaku','kleem','fabiovalse','andreaderrico2'].forEach (user) ->
+    ['nitaku','kleem','fabiovalse','andreaderrico2','cartoda'].forEach (user) ->
         users_q.defer (users_q_callback) -> sync_user(db, user, users_q_callback)
         
     users_q.awaitAll (error, results) ->
