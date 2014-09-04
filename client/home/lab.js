@@ -7,15 +7,21 @@
     id: 'lab'
   });
 
-  lab.append('div').html('<img src="home/icons/lab_icon.svg"/>Lab').attr({
+  lab.append('a').attr('href', '/webvis/lab').append('div').html('<div class="logo"></div>Lab').attr({
     id: 'lab_header'
   });
 
-  d3.json('/webvis/lab/api/gists', function(gists) {
-    var enter_gists, enter_thumbnails;
+  d3.json('/webvis/lab/api/gists' + (typeof user_filter !== "undefined" && user_filter !== null ? "/users/" + user_filter : ''), function(gists) {
+    var enter_gists, enter_thumbnails, gist;
+    if (typeof user_filter !== "undefined" && user_filter !== null) {
+      gist = gists[0];
+      lab.append('div').attr({
+        "class": 'user_filter'
+      }).html("<img class='big_avatar' src='" + gist.owner.avatar_url + "'/> <a href='/webvis/lab/users/" + gist.owner.login + "'>" + gist.owner.login + "</a>");
+    }
     enter_gists = lab.selectAll('.gist').data(gists).enter().append('a').attr({
       href: function(g) {
-        return "lab/" + g.id;
+        return "/webvis/lab/" + g.id;
       }
     }).append('div').attr({
       "class": 'gist'
@@ -35,7 +41,9 @@
         return "url(data:image/png;base64," + g.files['thumbnail.png.base64'].content + ")";
       }
     });
-    enter_thumbnails.append('img').attr({
+    enter_thumbnails.append('a').attr('href', function(g) {
+      return "/webvis/lab/users/" + g.owner.login;
+    }).append('img').attr({
       "class": 'avatar',
       src: function(g) {
         return g.owner.avatar_url;

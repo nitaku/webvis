@@ -9,7 +9,7 @@ body = d3.select('body')
 
 d3.json "api/gists/#{this_gist_id}", (gist) ->
     body.append('h2')
-        .html "<img class='avatar' src='#{gist.owner.avatar_url}'/>" + time_format(new Date(gist.created_at)) + '<br/>by ' + gist.owner.login
+        .html "<img class='avatar' src='#{gist.owner.avatar_url}'/>" + time_format(new Date(gist.created_at)) + '<br/>by <a href="/webvis/lab/users/' + gist.owner.login + '">' + gist.owner.login + '</a>'
     
     body.append('h1')
         .text(gist.description)

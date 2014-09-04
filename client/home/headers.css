@@ -7,6 +7,13 @@
   src: url("Hefty Regular.otf");
 }
 
+#lab_header .logo {
+    background: url(icons/lab_icon.svg);
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -4px;
+}
 #lab_header {
     font-family: "Hefty Regular";
     font-size: 22px;
@@ -56,4 +63,18 @@ a:hover #lab_header > i {
     -moz-transform: translate(18px,0);
     -ms-transform: translate(18px,0);
     -ms-transform: translate(18px,0);
+}
+.big_avatar {
+    width: 32px;
+    height: 32px;
+}
+.user_filter {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.user_filter > * {
+    vertical-align: middle;
+}
+.user_filter > img {
+    margin-right: 4px;
 }

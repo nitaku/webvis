@@ -34,6 +34,28 @@ MongoClient.connect 'mongodb://127.0.0.1:27017/lab', (error, db) ->
             
             res.json gists
             
+    app.get '//api/gists/users/:user', (req, res) -> 
+        options = {
+            fields: {
+                id: 1,
+                created_at: 1,
+                updated_at: 1,
+                description: 1,
+                'files.thumbnail\uff0epng.raw_url': 1,
+                'files.thumbnail\uff0epng\uff0ebase64': 1,
+                owner: 1,
+                truncated: 1,
+                comments: 1
+            },
+            sort: [['created_at',-1]]
+        }
+        db.collection('gists').find({'owner.login': req.params.user}, options).toArray (error, gists) ->
+            throw error if error
+            
+            _.forEach gists, unmongoify
+            
+            res.json gists
+            
     app.get '//api/gists/:id', (req, res) ->
         options = {
             fields: {
@@ -72,6 +94,30 @@ MongoClient.connect 'mongodb://127.0.0.1:27017/lab', (error, db) ->
                 </head>
                 <body>
                     <script src="home/lab.js"></script>
+                </body>
+            </html>
+        """
+        
+    app.get '//users/:user', (req, res) ->
+        res.send """
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <meta charset="utf-8">
+                    <title>#{req.params.user}@Lab - WAFI WebVis</title>
+                    
+                    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+                    
+                    <link rel="stylesheet" href="../../home/lab.css">
+                    <link rel="stylesheet" href="../../home/headers.css">
+                    <script src="../../home/lib/showdown.js"></script>
+                    <script src="http://d3js.org/d3.v3.min.js"></script>
+                    <script>
+                        var user_filter = '#{req.params.user}';
+                    </script>
+                </head>
+                <body>
+                    <script src="../../home/lab.js"></script>
                 </body>
             </html>
         """

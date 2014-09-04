@@ -11,7 +11,7 @@
 
   d3.json("api/gists/" + this_gist_id, function(gist) {
     var a, comments_box, container, readme_markdown, user, _i, _len;
-    body.append('h2').html(("<img class='avatar' src='" + gist.owner.avatar_url + "'/>") + time_format(new Date(gist.created_at)) + '<br/>by ' + gist.owner.login);
+    body.append('h2').html(("<img class='avatar' src='" + gist.owner.avatar_url + "'/>") + time_format(new Date(gist.created_at)) + '<br/>by <a href="/webvis/lab/users/' + gist.owner.login + '">' + gist.owner.login + '</a>');
     body.append('h1').text(gist.description);
     container = body.append('section');
     container.append('nav').html("Open in <a href='http://bl.ocks.org/" + gist.owner.login + "/" + gist.id + "'>bl.ocks.org</a> - <a href='http://gist.github.com/" + gist.owner.login + "/" + gist.id + "'>Gist</a> - <a href='" + gist.id + "/index.html'>full page</a>");

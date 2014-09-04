@@ -94,10 +94,10 @@ a:hover {
     text-decoration: underline;
 }
 
-#lab a {
+#lab > a {
     color: inherit;
 }
-#lab a:hover {
+#lab > a:hover {
     text-decoration: none;
 }
 

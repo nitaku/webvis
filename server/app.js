@@ -33,6 +33,30 @@
         return res.json(gists);
       });
     });
+    app.get('//api/gists/users/:user', function(req, res) {
+      var options;
+      options = {
+        fields: {
+          id: 1,
+          created_at: 1,
+          updated_at: 1,
+          description: 1,
+          'files.thumbnail\uff0epng.raw_url': 1,
+          'files.thumbnail\uff0epng\uff0ebase64': 1,
+          owner: 1,
+          truncated: 1,
+          comments: 1
+        },
+        sort: [['created_at', -1]]
+      };
+      return db.collection('gists').find({
+        'owner.login': req.params.user
+      }, options).toArray(function(error, gists) {
+        if (error) throw error;
+        _.forEach(gists, unmongoify);
+        return res.json(gists);
+      });
+    });
     app.get('//api/gists/:id', function(req, res) {
       var options;
       options = {
@@ -58,6 +82,9 @@
     });
     app.get('/', function(req, res) {
       return res.send("<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Lab - WAFI WebVis</title>\n        \n        <link href=\"//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n        \n        <link rel=\"stylesheet\" href=\"home/lab.css\">\n        <link rel=\"stylesheet\" href=\"home/headers.css\">\n        <script src=\"home/lib/showdown.js\"></script>\n        <script src=\"http://d3js.org/d3.v3.min.js\"></script>\n    </head>\n    <body>\n        <script src=\"home/lab.js\"></script>\n    </body>\n</html>");
+    });
+    app.get('//users/:user', function(req, res) {
+      return res.send("<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        <title>" + req.params.user + "@Lab - WAFI WebVis</title>\n        \n        <link href=\"//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n        \n        <link rel=\"stylesheet\" href=\"../../home/lab.css\">\n        <link rel=\"stylesheet\" href=\"../../home/headers.css\">\n        <script src=\"../../home/lib/showdown.js\"></script>\n        <script src=\"http://d3js.org/d3.v3.min.js\"></script>\n        <script>\n            var user_filter = '" + req.params.user + "';\n        </script>\n    </head>\n    <body>\n        <script src=\"../../home/lab.js\"></script>\n    </body>\n</html>");
     });
     app.get('//:id', function(req, res) {
       return db.collection('gists').findOne({

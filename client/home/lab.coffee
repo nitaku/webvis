@@ -4,17 +4,25 @@ lab = body.append('div')
     .attr
         id: 'lab'
         
-lab.append('div')
-    .html('<img src="home/icons/lab_icon.svg"/>Lab')
+lab.append('a').attr('href','/webvis/lab').append('div')
+    .html('<div class="logo"></div>Lab')
     .attr
         id: 'lab_header'
         
-d3.json '/webvis/lab/api/gists', (gists) ->
+d3.json ('/webvis/lab/api/gists' + if user_filter? then "/users/#{user_filter}" else ''), (gists) ->
+    
+    if user_filter?
+        gist = gists[0]
+        lab.append('div')
+            .attr
+                class: 'user_filter'
+            .html "<img class='big_avatar' src='#{gist.owner.avatar_url}'/> <a href='/webvis/lab/users/#{gist.owner.login}'>#{gist.owner.login}</a>"
+        
     enter_gists = lab.selectAll('.gist')
         .data(gists)
       .enter().append('a')
         .attr
-            href: (g) -> "lab/#{g.id}"
+            href: (g) -> "/webvis/lab/#{g.id}"
       .append('div')
         .attr
             class: 'gist'
@@ -30,7 +38,7 @@ d3.json '/webvis/lab/api/gists', (gists) ->
             else if g.files['thumbnail.png.base64']?
                 return "url(data:image/png;base64,#{g.files['thumbnail.png.base64'].content})"
     
-    enter_thumbnails.append('img')
+    enter_thumbnails.append('a').attr('href', (g) -> "/webvis/lab/users/#{g.owner.login}").append('img')
         .attr
             class: 'avatar'
             src: (g) -> g.owner.avatar_url
