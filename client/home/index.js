@@ -70,7 +70,9 @@
         return "url(data:image/png;base64," + g.files['thumbnail.png.base64'].content + ")";
       }
     });
-    enter_thumbnails.append('img').attr({
+    enter_thumbnails.append('a').attr('href', function(g) {
+      return "/webvis/lab/users/" + g.owner.login;
+    }).append('img').attr({
       "class": 'avatar',
       src: function(g) {
         return g.owner.avatar_url;

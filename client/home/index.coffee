@@ -78,7 +78,7 @@ d3.json '/webvis/lab/api/gists', (gists) ->
             else if g.files['thumbnail.png.base64']?
                 return "url(data:image/png;base64,#{g.files['thumbnail.png.base64'].content})"
             
-    enter_thumbnails.append('img')
+    enter_thumbnails.append('a').attr('href', (g) -> "/webvis/lab/users/#{g.owner.login}").append('img')
         .attr
             class: 'avatar'
             src: (g) -> g.owner.avatar_url
