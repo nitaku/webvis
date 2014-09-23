@@ -23,7 +23,7 @@
     var users_q;
     if (error) throw error;
     users_q = queue(10);
-    ['nitaku', 'kleem', 'fabiovalse', 'andreaderrico2', 'cartoda'].forEach(function(user) {
+    ['nitaku', 'kleem', 'fabiovalse', 'andreaderrico2', 'cartoda', 'mtesconi'].forEach(function(user) {
       return users_q.defer(function(users_q_callback) {
         return sync_user(db, user, users_q_callback);
       });
