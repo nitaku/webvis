@@ -38,27 +38,29 @@
     var gists, recur_req;
     console.log("" + user + ": Syncing all gists...");
     gists = [];
-    recur_req = function(url, callback) {
+    recur_req = function(url, page, callback) {
       return request({
-        url: url + '?' + KEY,
+        url: url + '?' + KEY + '&page=' + page,
         headers: {
           'User-Agent': 'WebVis Lab, via nodejs request library'
         }
       }, function(error, response, body) {
         var new_gists;
-        if (error) throw error;
+        if (response.statusCode === 404 || JSON.parse(body).length === 0) {
+          console.log("" + user + ": end of pagination reached at index " + (page - 1));
+          callback();
+          return;
+        }
+        console.log("" + user + ": paginating over " + url + "&page=" + page);
         new_gists = JSON.parse(body);
         _.forEach(new_gists, mongoify);
         gists = gists.concat(new_gists);
-        if ((response.headers.link != null) && (parse_link_header(response.headers.link).next != null)) {
-          return recur_req(parse_link_header(response.headers.link).next.url, callback);
-        } else {
-          return callback();
-        }
+        return recur_req(url, page + 1, callback);
       });
     };
-    return recur_req("https://api.github.com/users/" + user + "/gists", function() {
+    return recur_req("https://api.github.com/users/" + user + "/gists", 1, function() {
       var gists_q;
+      console.log("" + user + ": ...list of gists retrieved");
       gists_q = queue(20);
       gists.forEach(function(gist) {
         if (!(gist.files['README\uff0emd'] != null) || (!(gist.files['thumbnail\uff0epng'] != null) && !gist.files['thumbnail\uff0epng\uff0ebase64'])) {

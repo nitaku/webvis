@@ -29,23 +29,28 @@ sync_user = (db, user, users_q_callback) ->
     gists = []
     
     # recursive request to Gist APIs to fetch all of a user's gists
-    recur_req = (url, callback) ->
+    recur_req = (url, page, callback) ->
         request {
-            url: url+'?'+KEY,
+            url: url+'?'+KEY+'&page='+page,
             headers: {'User-Agent': 'WebVis Lab, via nodejs request library'}
           }, (error, response, body) ->
-            throw error if error
+            if response.statusCode is 404 or JSON.parse(body).length is 0
+                console.log "#{user}: end of pagination reached at index #{page-1}"
+                callback()
+                return
+                
+            console.log "#{user}: paginating over #{url}&page=#{page}"
             
             new_gists = JSON.parse(body)
             _.forEach new_gists, mongoify
             gists = gists.concat(new_gists)
             
-            if response.headers.link? and parse_link_header(response.headers.link).next?
-                recur_req parse_link_header(response.headers.link).next.url, callback
-            else
-                callback()
-                
-    recur_req "https://api.github.com/users/#{user}/gists", () ->
+            # increment page index
+            recur_req url, page+1, callback
+            
+    recur_req "https://api.github.com/users/#{user}/gists", 1, () ->
+        console.log "#{user}: ...list of gists retrieved"
+        
         gists_q = queue(20)
         
         gists.forEach (gist) ->
